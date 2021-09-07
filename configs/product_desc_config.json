@@ -22,7 +22,7 @@
   "tpu_size": 8,
 
   "bucket": "test-gpt-j",
-  "model_dir": "step_383500",
+  "model_dir": "checkpoints",
 
   "train_set": "product_desc.train.index",
   "val_set": "product_desc.val.index",
