@@ -4,7 +4,7 @@ wandb>=0.11.2
 einops~=0.3.0
 requests~=2.25.1
 fabric~=2.6.0
-optax==0.0.6
+optax
 git+https://github.com/deepmind/dm-haiku
 git+https://github.com/EleutherAI/lm-evaluation-harness/
 ray
