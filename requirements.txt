@@ -4,7 +4,7 @@ wandb
 einops
 requests
 fabric
-optax
+#optax
 git+https://github.com/deepmind/dm-haiku
 git+https://github.com/EleutherAI/lm-evaluation-harness/
 ray[default]
