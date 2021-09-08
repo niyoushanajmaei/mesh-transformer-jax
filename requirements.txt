@@ -11,7 +11,7 @@ ray[default]
 jax
 Flask
 cloudpickle
-tensorflow-cpu
+tensorflow
 google-cloud-storage
 transformers
 smart_open[gcs]
