@@ -19,5 +19,6 @@ func_timeout
 ftfy
 fastapi
 uvicorn
-lm_dataformatpip
+lm_dataformat
+
 
