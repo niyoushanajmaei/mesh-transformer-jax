@@ -12,12 +12,12 @@
   "per_replica_batch": 1,
   "gradient_accumulation_steps": 16,
 
-  "warmup_steps": 3000,
-  "anneal_steps": 300000,
-  "lr": 1.2e-4,
-  "end_lr": 1.2e-5,
+  "warmup_steps": 7,
+  "anneal_steps": 65,
+  "lr": 5e-5,
+  "end_lr": 1e-5,
   "weight_decay": 0.1,
-  "total_steps": 350000,
+  "total_steps": 72,
 
   "tpu_size": 8,
 
@@ -25,23 +25,17 @@
   "model_dir": "checkpoints",
 
   "train_set": "product_desc.train.index",
-  "val_set": {"val":"product_desc.val.index"},
+  "val_set": {"val1":"product_desc.val.index"},
 
   "eval_harness_tasks": [
-    "lambada",
-    "piqa",
-    "hellaswag",
-    "winogrande",
-    "mathqa",
-    "pubmedqa"
   ],
 
-  "val_batches": 100,
-  "val_every": 500,
-  "ckpt_every": 500,
-  "keep_every": 10000,
+  "val_batches": 10,
+  "val_every": 80,
+  "ckpt_every": 72,
+  "keep_every": 72,
 
-  "name": "product_desc_test",
+  "name": "product-desc-model",
   "wandb_project": "mesh-transformer-jax",
   "comment": ""
 }
