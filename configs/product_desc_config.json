@@ -25,7 +25,7 @@
   "model_dir": "checkpoints",
 
   "train_set": "product_desc.train.index",
-  "val_set": "product_desc.val.index",
+  "val_set": {"val":"product_desc.val.index"},
 
   "eval_harness_tasks": [
     "lambada",

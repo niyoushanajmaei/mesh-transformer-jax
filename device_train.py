@@ -244,8 +244,7 @@ if __name__ == "__main__":
 
     val_sets = {}
 
-    print(params["val_set"])
-    print(params["train_set"])
+
     for k, v in params["val_set"].items():
         val_sets[k] = TFRecordNewInputs(
             f"data/{v}", batch_size=(global_val_batch,), sample_size=seq
