@@ -17,8 +17,6 @@ gs://test-gpt-j/dataset/train/batch02/product71.tfrecord
 gs://test-gpt-j/dataset/train/batch02/product104.tfrecord
 gs://test-gpt-j/dataset/train/batch02/product105.tfrecord
 gs://test-gpt-j/dataset/train/batch02/product1.tfrecord
-gs://test-gpt-j/dataset/train/batch02/product196.tfrecord
-gs://test-gpt-j/dataset/train/batch02/product197.tfrecord
 gs://test-gpt-j/dataset/train/batch02/product39.tfrecord
 gs://test-gpt-j/dataset/train/batch02/product38.tfrecord
 gs://test-gpt-j/dataset/train/batch02/product53.tfrecord
@@ -135,8 +133,6 @@ gs://test-gpt-j/dataset/train/batch02/product3.tfrecord
 gs://test-gpt-j/dataset/train/batch02/product2.tfrecord
 gs://test-gpt-j/dataset/train/batch02/product107.tfrecord
 gs://test-gpt-j/dataset/train/batch02/product106.tfrecord
-gs://test-gpt-j/dataset/train/batch02/product195.tfrecord
-gs://test-gpt-j/dataset/train/batch02/product194.tfrecord
 gs://test-gpt-j/dataset/train/batch02/product133.tfrecord
 gs://test-gpt-j/dataset/train/batch02/product132.tfrecord
 gs://test-gpt-j/dataset/train/batch02/product47.tfrecord
@@ -167,7 +163,6 @@ gs://test-gpt-j/dataset/train/batch02/product134.tfrecord
 gs://test-gpt-j/dataset/train/batch02/product135.tfrecord
 gs://test-gpt-j/dataset/train/batch02/product40.tfrecord
 gs://test-gpt-j/dataset/train/batch02/product41.tfrecord
-gs://test-gpt-j/dataset/train/batch02/product198.tfrecord
 gs://test-gpt-j/dataset/train/batch02/product37.tfrecord
 gs://test-gpt-j/dataset/train/batch02/product36.tfrecord
 gs://test-gpt-j/dataset/train/batch02/product143.tfrecord
@@ -231,8 +226,6 @@ gs://test-gpt-j/dataset/train/batch05/product34.tfrecord
 gs://test-gpt-j/dataset/train/batch05/product35.tfrecord
 gs://test-gpt-j/dataset/train/batch05/product49.tfrecord
 gs://test-gpt-j/dataset/train/batch05/product48.tfrecord
-gs://test-gpt-j/dataset/train/batch05/product77.tfrecord
-gs://test-gpt-j/dataset/train/batch05/product76.tfrecord
 gs://test-gpt-j/dataset/train/batch05/product7.tfrecord
 gs://test-gpt-j/dataset/train/batch05/product6.tfrecord
 gs://test-gpt-j/dataset/train/batch05/product13.tfrecord
@@ -245,7 +238,6 @@ gs://test-gpt-j/dataset/train/batch05/product19.tfrecord
 gs://test-gpt-j/dataset/train/batch05/product18.tfrecord
 gs://test-gpt-j/dataset/train/batch05/product27.tfrecord
 gs://test-gpt-j/dataset/train/batch05/product26.tfrecord
-gs://test-gpt-j/dataset/train/batch05/product73.tfrecord
 gs://test-gpt-j/dataset/train/batch05/product72.tfrecord
 gs://test-gpt-j/dataset/train/batch05/product3.tfrecord
 gs://test-gpt-j/dataset/train/batch05/product2.tfrecord
@@ -255,8 +247,6 @@ gs://test-gpt-j/dataset/train/batch05/product30.tfrecord
 gs://test-gpt-j/dataset/train/batch05/product31.tfrecord
 gs://test-gpt-j/dataset/train/batch05/product9.tfrecord
 gs://test-gpt-j/dataset/train/batch05/product8.tfrecord
-gs://test-gpt-j/dataset/train/batch05/product74.tfrecord
-gs://test-gpt-j/dataset/train/batch05/product75.tfrecord
 gs://test-gpt-j/dataset/train/batch05/product4.tfrecord
 gs://test-gpt-j/dataset/train/batch05/product5.tfrecord
 gs://test-gpt-j/dataset/train/batch05/product40.tfrecord
@@ -288,7 +278,6 @@ gs://test-gpt-j/dataset/train/batch04/product39.tfrecord
 gs://test-gpt-j/dataset/train/batch04/product38.tfrecord
 gs://test-gpt-j/dataset/train/batch04/product53.tfrecord
 gs://test-gpt-j/dataset/train/batch04/product52.tfrecord
-gs://test-gpt-j/dataset/train/batch04/product126.tfrecord
 gs://test-gpt-j/dataset/train/batch04/product88.tfrecord
 gs://test-gpt-j/dataset/train/batch04/product89.tfrecord
 gs://test-gpt-j/dataset/train/batch04/product119.tfrecord
@@ -349,8 +338,6 @@ gs://test-gpt-j/dataset/train/batch04/product64.tfrecord
 gs://test-gpt-j/dataset/train/batch04/product65.tfrecord
 gs://test-gpt-j/dataset/train/batch04/product50.tfrecord
 gs://test-gpt-j/dataset/train/batch04/product51.tfrecord
-gs://test-gpt-j/dataset/train/batch04/product124.tfrecord
-gs://test-gpt-j/dataset/train/batch04/product125.tfrecord
 gs://test-gpt-j/dataset/train/batch04/product19.tfrecord
 gs://test-gpt-j/dataset/train/batch04/product18.tfrecord
 gs://test-gpt-j/dataset/train/batch04/product27.tfrecord
@@ -393,8 +380,6 @@ gs://test-gpt-j/dataset/train/batch04/product63.tfrecord
 gs://test-gpt-j/dataset/train/batch04/product62.tfrecord
 gs://test-gpt-j/dataset/train/batch04/product57.tfrecord
 gs://test-gpt-j/dataset/train/batch04/product56.tfrecord
-gs://test-gpt-j/dataset/train/batch04/product123.tfrecord
-gs://test-gpt-j/dataset/train/batch04/product122.tfrecord
 gs://test-gpt-j/dataset/train/batch04/product69.tfrecord
 gs://test-gpt-j/dataset/train/batch04/product68.tfrecord
 gs://test-gpt-j/dataset/train/batch04/product20.tfrecord
@@ -453,8 +438,6 @@ gs://test-gpt-j/dataset/train/batch03/product89.tfrecord
 gs://test-gpt-j/dataset/train/batch03/product249.tfrecord
 gs://test-gpt-j/dataset/train/batch03/product248.tfrecord
 gs://test-gpt-j/dataset/train/batch03/product150.tfrecord
-gs://test-gpt-j/dataset/train/batch03/product336.tfrecord
-gs://test-gpt-j/dataset/train/batch03/product337.tfrecord
 gs://test-gpt-j/dataset/train/batch03/product151.tfrecord
 gs://test-gpt-j/dataset/train/batch03/product119.tfrecord
 gs://test-gpt-j/dataset/train/batch03/product118.tfrecord
@@ -603,8 +586,6 @@ gs://test-gpt-j/dataset/train/batch03/product125.tfrecord
 gs://test-gpt-j/dataset/train/batch03/product19.tfrecord
 gs://test-gpt-j/dataset/train/batch03/product18.tfrecord
 gs://test-gpt-j/dataset/train/batch03/product153.tfrecord
-gs://test-gpt-j/dataset/train/batch03/product335.tfrecord
-gs://test-gpt-j/dataset/train/batch03/product334.tfrecord
 gs://test-gpt-j/dataset/train/batch03/product152.tfrecord
 gs://test-gpt-j/dataset/train/batch03/product274.tfrecord
 gs://test-gpt-j/dataset/train/batch03/product275.tfrecord
@@ -714,7 +695,6 @@ gs://test-gpt-j/dataset/train/batch03/product185.tfrecord
 gs://test-gpt-j/dataset/train/batch03/product184.tfrecord
 gs://test-gpt-j/dataset/train/batch03/product279.tfrecord
 gs://test-gpt-j/dataset/train/batch03/product278.tfrecord
-gs://test-gpt-j/dataset/train/batch03/product338.tfrecord
 gs://test-gpt-j/dataset/train/batch03/product230.tfrecord
 gs://test-gpt-j/dataset/train/batch03/product231.tfrecord
 gs://test-gpt-j/dataset/train/batch03/product63.tfrecord
@@ -1000,9 +980,7 @@ gs://test-gpt-j/dataset/train/batch06/product331.tfrecord
 gs://test-gpt-j/dataset/train/batch06/product157.tfrecord
 gs://test-gpt-j/dataset/train/batch06/product156.tfrecord
 gs://test-gpt-j/dataset/train/batch06/product330.tfrecord
-gs://test-gpt-j/dataset/train/batch06/product909.tfrecord
 gs://test-gpt-j/dataset/train/batch06/product599.tfrecord
-gs://test-gpt-j/dataset/train/batch06/product908.tfrecord
 gs://test-gpt-j/dataset/train/batch06/product598.tfrecord
 gs://test-gpt-j/dataset/train/batch06/product893.tfrecord
 gs://test-gpt-j/dataset/train/batch06/product403.tfrecord
@@ -1246,9 +1224,7 @@ gs://test-gpt-j/dataset/train/batch06/product65.tfrecord
 gs://test-gpt-j/dataset/train/batch06/product762.tfrecord
 gs://test-gpt-j/dataset/train/batch06/product159.tfrecord
 gs://test-gpt-j/dataset/train/batch06/product158.tfrecord
-gs://test-gpt-j/dataset/train/batch06/product907.tfrecord
 gs://test-gpt-j/dataset/train/batch06/product597.tfrecord
-gs://test-gpt-j/dataset/train/batch06/product906.tfrecord
 gs://test-gpt-j/dataset/train/batch06/product596.tfrecord
 gs://test-gpt-j/dataset/train/batch06/product439.tfrecord
 gs://test-gpt-j/dataset/train/batch06/product438.tfrecord
@@ -1335,7 +1311,6 @@ gs://test-gpt-j/dataset/train/batch06/product703.tfrecord
 gs://test-gpt-j/dataset/train/batch06/product702.tfrecord
 gs://test-gpt-j/dataset/train/batch06/product564.tfrecord
 gs://test-gpt-j/dataset/train/batch06/product580.tfrecord
-gs://test-gpt-j/dataset/train/batch06/product910.tfrecord
 gs://test-gpt-j/dataset/train/batch06/product581.tfrecord
 gs://test-gpt-j/dataset/train/batch06/product328.tfrecord
 gs://test-gpt-j/dataset/train/batch06/product329.tfrecord
@@ -2216,7 +2191,6 @@ gs://test-gpt-j/dataset/train/batch08/product254.tfrecord
 gs://test-gpt-j/dataset/train/batch08/product255.tfrecord
 gs://test-gpt-j/dataset/train/batch08/product419.tfrecord
 gs://test-gpt-j/dataset/train/batch08/product418.tfrecord
-gs://test-gpt-j/dataset/train/batch08/product582.tfrecord
 gs://test-gpt-j/dataset/train/batch08/product70.tfrecord
 gs://test-gpt-j/dataset/train/batch08/product511.tfrecord
 gs://test-gpt-j/dataset/train/batch08/product71.tfrecord
@@ -2509,9 +2483,7 @@ gs://test-gpt-j/dataset/train/batch08/product124.tfrecord
 gs://test-gpt-j/dataset/train/batch08/product125.tfrecord
 gs://test-gpt-j/dataset/train/batch08/product343.tfrecord
 gs://test-gpt-j/dataset/train/batch08/product19.tfrecord
-gs://test-gpt-j/dataset/train/batch08/product578.tfrecord
 gs://test-gpt-j/dataset/train/batch08/product18.tfrecord
-gs://test-gpt-j/dataset/train/batch08/product579.tfrecord
 gs://test-gpt-j/dataset/train/batch08/product407.tfrecord
 gs://test-gpt-j/dataset/train/batch08/product406.tfrecord
 gs://test-gpt-j/dataset/train/batch08/product153.tfrecord
@@ -2544,8 +2516,6 @@ gs://test-gpt-j/dataset/train/batch08/product257.tfrecord
 gs://test-gpt-j/dataset/train/batch08/product256.tfrecord
 gs://test-gpt-j/dataset/train/batch08/product565.tfrecord
 gs://test-gpt-j/dataset/train/batch08/product564.tfrecord
-gs://test-gpt-j/dataset/train/batch08/product580.tfrecord
-gs://test-gpt-j/dataset/train/batch08/product581.tfrecord
 gs://test-gpt-j/dataset/train/batch08/product328.tfrecord
 gs://test-gpt-j/dataset/train/batch08/product329.tfrecord
 gs://test-gpt-j/dataset/train/batch08/product488.tfrecord
@@ -2754,8 +2724,6 @@ gs://test-gpt-j/dataset/train/batch07/product44.tfrecord
 gs://test-gpt-j/dataset/train/batch07/product45.tfrecord
 gs://test-gpt-j/dataset/train/batch07/product33.tfrecord
 gs://test-gpt-j/dataset/train/batch07/product32.tfrecord
-gs://test-gpt-j/dataset/train/batch07/product147.tfrecord
-gs://test-gpt-j/dataset/train/batch07/product146.tfrecord
 gs://test-gpt-j/dataset/train/batch07/product95.tfrecord
 gs://test-gpt-j/dataset/train/batch07/product94.tfrecord
 gs://test-gpt-j/dataset/train/batch07/product70.tfrecord
@@ -2771,7 +2739,6 @@ gs://test-gpt-j/dataset/train/batch07/product127.tfrecord
 gs://test-gpt-j/dataset/train/batch07/product126.tfrecord
 gs://test-gpt-j/dataset/train/batch07/product88.tfrecord
 gs://test-gpt-j/dataset/train/batch07/product89.tfrecord
-gs://test-gpt-j/dataset/train/batch07/product150.tfrecord
 gs://test-gpt-j/dataset/train/batch07/product119.tfrecord
 gs://test-gpt-j/dataset/train/batch07/product118.tfrecord
 gs://test-gpt-j/dataset/train/batch07/product24.tfrecord
@@ -2866,8 +2833,6 @@ gs://test-gpt-j/dataset/train/batch07/product91.tfrecord
 gs://test-gpt-j/dataset/train/batch07/product90.tfrecord
 gs://test-gpt-j/dataset/train/batch07/product74.tfrecord
 gs://test-gpt-j/dataset/train/batch07/product75.tfrecord
-gs://test-gpt-j/dataset/train/batch07/product149.tfrecord
-gs://test-gpt-j/dataset/train/batch07/product148.tfrecord
 gs://test-gpt-j/dataset/train/batch07/product4.tfrecord
 gs://test-gpt-j/dataset/train/batch07/product5.tfrecord
 gs://test-gpt-j/dataset/train/batch07/product100.tfrecord
