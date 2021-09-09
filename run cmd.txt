@@ -1,0 +1,1 @@
+python3 device_train.py --config=configs/product_desc_config.json --tune-model-path=gs://test-gpt-j/step_383500/
