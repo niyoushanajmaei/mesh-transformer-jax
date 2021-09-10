@@ -8,6 +8,7 @@ from jax.experimental import maps
 import numpy as np
 import optax
 import transformers
+from pathlib import Path
 
 from mesh_transformer.checkpoint import read_ckpt
 from mesh_transformer.sampling import nucleaus_sample
@@ -72,5 +73,19 @@ def infer(context, top_p=0.9, temp=1.0, gen_len=512):
 
     print(f"completion done in {time.time() - start:06}s")
     return samples
+
+def infer_test_set():
+  p =[]
+  d = "test_set"
+  c=0
+  for path in os.listdir(d):
+      full_path = os.path.join(d, path)
+      c+=1
+      if os.path.isfile(full_path):
+          txt = Path(full_path).read_text()
+          txt = txt.replace('\n', '')
+          result = infer(txt)
+          with open("results/"+'product'+c+".txt", 'w') as writer:
+            writer.write(result)
 
 print(infer("EleutherAI is")[0])
