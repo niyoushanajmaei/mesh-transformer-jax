@@ -6,3 +6,4 @@ mesh-transformer-jax/requirements.txt
 pip install --upgrade pip
 jax==0.2.12
 tensorflow==2.5.0
+
