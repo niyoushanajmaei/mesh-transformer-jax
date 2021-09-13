@@ -85,7 +85,7 @@ def infer_test_set():
           txt = Path(full_path).read_text()
           txt = txt.replace('\n', '')
           result = infer(txt)
-          with open("results/"+'product'+c+".txt", 'w') as writer:
+          with open("infer/results/"+'product'+c+".txt", 'w') as writer:
             writer.write(result)
 
 print(infer("EleutherAI is")[0])
