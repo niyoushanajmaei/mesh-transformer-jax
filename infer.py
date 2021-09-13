@@ -48,7 +48,7 @@ total_batch = per_replica_batch * jax.device_count() // cores_per_replica
 
 network = CausalTransformer(params)
 
-network.state = read_ckpt(network.state, "root@bfeb8840d85d:/data/step_72#/", devices.shape[1])
+network.state = read_ckpt(network.state, "/data/step_72#/", devices.shape[1])
 
 network.state = network.move_xmap(network.state, np.zeros(cores_per_replica))
 
