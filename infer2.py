@@ -6,14 +6,17 @@ from jax.experimental import maps
 import numpy as np
 import optax
 import transformers
+from resource import *
+import time
 
 from mesh_transformer.checkpoint import read_ckpt
 from mesh_transformer.sampling import nucleaus_sample
 from mesh_transformer.transformer_shard import CausalTransformer
-import os
+#import os
 
-os.environ['XLA_PYTHON_CLIENT_PREALLOCATE']='false'
-os.environ['XLA_PYTHON_CLIENT_MEM_FRACTION']='.50' 
+#os.environ['XLA_PYTHON_CLIENT_PREALLOCATE']='false'
+#os.environ['XLA_PYTHON_CLIENT_MEM_FRACTION']='.50' 
+#os.environ['XLA_PYTHON_CLIENT_ALLOCATOR']= 'platform'
 
 params = {
   "layers": 28,
@@ -51,6 +54,8 @@ start = time.time()
 # here we load a checkpoint which was written with 8 shards into 1 shard
 network.state = read_ckpt(network.state, "/data/step_72/", 8, shards_out=cores_per_replica)
 
+print(getrusage(RUSAGE_SELF))
+
 # move the state to CPU/system memory so it's not duplicated by xmap
 network.state = jax.device_put(network.state, jax.devices("cpu")[0])
 
@@ -66,6 +71,8 @@ def infer(context, top_k=40, top_p=0.9, temp=1.0, gen_len=512):
 
     start = time.time()
     output = network.generate(batched_tokens, length, gen_len, {"top_p": np.ones(per_replica_batch) * top_p, "top_k": top_k is not None and (np.ones(per_replica_batch, dtype=np.int32) * top_k) or None, "temp": np.ones(per_replica_batch) * temp})
+
+    print(getrusage(RUSAGE_SELF))
 
     samples = []
     decoded_tokens = output[1][0]
