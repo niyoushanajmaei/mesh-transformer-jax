@@ -10,9 +10,9 @@ import optax
 import transformers
 from pathlib import Path
 
-#from mesh_transformer.checkpoint import read_ckpt
-#from mesh_transformer.sampling import nucleaus_sample
-#from mesh_transformer.transformer_shard import CausalTransformer
+from mesh_transformer.checkpoint import read_ckpt
+from mesh_transformer.sampling import nucleaus_sample
+from mesh_transformer.transformer_shard import CausalTransformer
 
 params = {
   "layers": 28,
