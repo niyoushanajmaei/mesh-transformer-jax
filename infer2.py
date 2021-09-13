@@ -10,6 +10,10 @@ import transformers
 from mesh_transformer.checkpoint import read_ckpt
 from mesh_transformer.sampling import nucleaus_sample
 from mesh_transformer.transformer_shard import CausalTransformer
+import os
+
+os.environ['XLA_PYTHON_CLIENT_PREALLOCATE']='false'
+os.environ['XLA_PYTHON_CLIENT_MEM_FRACTION']='.50'
 
 params = {
   "layers": 28,
@@ -73,4 +77,4 @@ def infer(context, top_k=40, top_p=0.9, temp=1.0, gen_len=512):
     return samples
 
 
-infer("EleutherAI is")
+print(infer("EleutherAI is"))
