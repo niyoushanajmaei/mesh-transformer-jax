@@ -13,7 +13,7 @@ from mesh_transformer.transformer_shard import CausalTransformer
 import os
 
 os.environ['XLA_PYTHON_CLIENT_PREALLOCATE']='false'
-os.environ['XLA_PYTHON_CLIENT_MEM_FRACTION']='.50'
+os.environ['XLA_PYTHON_CLIENT_MEM_FRACTION']='.50' 
 
 params = {
   "layers": 28,
