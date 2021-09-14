@@ -1,1 +1,4 @@
-gs://test-gpt-j/dataset/val/val_2862.tfrecords
+/data/dataset/val/batch01_32.tfrecords
+/data/dataset/val/batch02_31.tfrecords
+/data/dataset/val/batch03_31.tfrecords
+/data/dataset/val/batch04_39.tfrecords
