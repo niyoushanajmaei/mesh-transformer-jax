@@ -10,6 +10,7 @@ import numpy as np
 import optax
 import transformers
 from pathlib import Path
+import os
 
 from mesh_transformer.checkpoint import read_ckpt
 from mesh_transformer.sampling import nucleaus_sample
@@ -49,7 +50,8 @@ total_batch = per_replica_batch * jax.device_count() // cores_per_replica
 
 network = CausalTransformer(params)
 
-network.state = read_ckpt(network.state, "/data/step_72/", devices.shape[1])
+print(devices.shape[1])
+network.state = read_ckpt(network.state, "/home/zero11/step_383500/", devices.shape[1])
 
 network.state = network.move_xmap(network.state, np.zeros(cores_per_replica))
 
