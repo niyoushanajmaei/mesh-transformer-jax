@@ -50,7 +50,7 @@ network = CausalTransformer(params)
 start = time.time()
 
 # here we load a checkpoint which was written with 8 shards into 1 shard
-network.state = read_ckpt(network.state, "/home/zero11/step_383500/", 256, shards_out=cores_per_replica)
+network.state = read_ckpt(network.state, "/home/zero11/step_383500/", 8, shards_out=cores_per_replica)
 
 print(f"loading RAM usage: {re.getrusage(re.RUSAGE_SELF)}")
 
