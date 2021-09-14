@@ -21,7 +21,7 @@
 
   "tpu_size": 1,
 
-  "bucket": "/data/",
+  "bucket": "/home/zero11/",
   "model_dir": "checkpoints",
 
   "train_set": "product_desc.train.index",
@@ -36,6 +36,6 @@
   "keep_every": 72,
 
   "name": "product-desc-model",
-  "wandb_project": "mesh-transformer-jax",
+  "wandb_project": "product-desc-model",
   "comment": ""
 }

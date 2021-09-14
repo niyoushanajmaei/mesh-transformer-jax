@@ -1,3 +1,5 @@
+#finetuning the model locally on a CPU
+
 import argparse
 import json
 import time

@@ -1,3 +1,6 @@
+#infering with CPU the shards written by TPU. 
+#pip install -r requirements.txt
+#pip install mesh-transformer-jax jax==0.2.12 tensorflow==2.5.0
 
 import time
 
@@ -6,17 +9,12 @@ from jax.experimental import maps
 import numpy as np
 import optax
 import transformers
-from resource import *
+import resource as re
 import time
 
 from mesh_transformer.checkpoint import read_ckpt
 from mesh_transformer.sampling import nucleaus_sample
 from mesh_transformer.transformer_shard import CausalTransformer
-#import os
-
-#os.environ['XLA_PYTHON_CLIENT_PREALLOCATE']='false'
-#os.environ['XLA_PYTHON_CLIENT_MEM_FRACTION']='.50' 
-#os.environ['XLA_PYTHON_CLIENT_ALLOCATOR']= 'platform'
 
 params = {
   "layers": 28,
@@ -52,9 +50,9 @@ network = CausalTransformer(params)
 start = time.time()
 
 # here we load a checkpoint which was written with 8 shards into 1 shard
-network.state = read_ckpt(network.state, "/data/step_72/", 8, shards_out=cores_per_replica)
+network.state = read_ckpt(network.state, "/home/zero11/step_383500/", 8, shards_out=cores_per_replica)
 
-print(getrusage(RUSAGE_SELF))
+print(f"loading RAM usage: {re.getrusage(re.RUSAGE_SELF)}")
 
 # move the state to CPU/system memory so it's not duplicated by xmap
 network.state = jax.device_put(network.state, jax.devices("cpu")[0])
@@ -72,14 +70,13 @@ def infer(context, top_k=40, top_p=0.9, temp=1.0, gen_len=512):
     start = time.time()
     output = network.generate(batched_tokens, length, gen_len, {"top_p": np.ones(per_replica_batch) * top_p, "top_k": top_k is not None and (np.ones(per_replica_batch, dtype=np.int32) * top_k) or None, "temp": np.ones(per_replica_batch) * temp})
 
-    print(getrusage(RUSAGE_SELF))
-
     samples = []
     decoded_tokens = output[1][0]
 
     for o in decoded_tokens[:, :, 0]:
       samples.append(tokenizer.decode(o))
 
+    print(f"total RAM usage: {re.getrusage(re.RUSAGE_SELF)}")
     print(f"completion done in {time.time() - start:06}s")
     return samples
 

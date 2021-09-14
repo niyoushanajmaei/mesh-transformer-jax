@@ -1,6 +1,7 @@
 #use the inf-env to run this.
 #pip install -r mesh-transformer-jax/requirements.txt
 #pip install mesh-transformer-jax/ jax==0.2.12 tensorflow==2.5.0
+#infering with TPU shards written by TPU
 
 import time
 import jax
