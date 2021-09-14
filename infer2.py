@@ -34,13 +34,12 @@ per_replica_batch = params["per_replica_batch"]
 cores_per_replica = params["cores_per_replica"]
 seq = params["seq"]
 
-
 params["sampler"] = nucleaus_sample
 
 # here we "remove" the optimizer parameters from the model (as we don't need them for inference)
 params["optimizer"] = optax.scale(0)
 
-devices = np.array([jax.devices()[0]]).reshape((1, 1))
+devices = np.array([jax.devices()[0]]).reshape((1, 2))
 maps.thread_resources.env = maps.ResourceEnv(maps.Mesh(devices, ('dp', 'mp')))
 
 tokenizer = transformers.GPT2TokenizerFast.from_pretrained('gpt2')
