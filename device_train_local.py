@@ -267,8 +267,12 @@ if __name__ == "__main__":
                 init_sched_state = network.state["opt_state"][-1]
 
             start = time.time()
-            network.state = read_ckpt(network.state, initial_ckpt_state_path, devices.shape[1], load_opt=(not args.fresh_opt))
-
+            #network.state = read_ckpt(network.state, initial_ckpt_state_path, devices.shape[1], load_opt=(not args.fresh_opt))
+            # here we load a checkpoint which was written with 8 shards into 1 shard
+            network.state = read_ckpt(network.state, initial_ckpt_state_path, 8, shards_out=cores_per_replica,load_opt=(not args.fresh_opt)s)
+            # move the state to CPU/system memory so it's not duplicated by xmap
+            network.state = jax.device_put(network.state, jax.devices("cpu")[0])
+            
             if fine_tuning:
                 # overwrite the loaded scheduler step with zeros
                 # this makes fine-tuning use the lr schedule in
