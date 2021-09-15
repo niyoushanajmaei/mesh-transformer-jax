@@ -15,6 +15,8 @@ import time
 from mesh_transformer.checkpoint import read_ckpt
 from mesh_transformer.sampling import nucleaus_sample
 from mesh_transformer.transformer_shard import CausalTransformer
+from mesh_transformer import util
+from mesh_transformer.util import clip_by_global_norm, additive_weight_decay
 
 params = {
   "layers": 28,
@@ -24,6 +26,13 @@ params = {
   "norm": "layernorm",
   "pe": "rotary",
   "pe_rotary_dims": 64,
+  "gradient_accumulation_steps": 16,
+  "warmup_steps": 7,
+  "anneal_steps": 65,
+  "lr": 5e-5,
+  "end_lr": 1e-5,
+  "weight_decay": 0.1,
+  "total_steps": 72,
   "early_cast": True,
   "seq": 2048,
   "cores_per_replica": 1, 
@@ -40,6 +49,13 @@ params["sampler"] = nucleaus_sample
 # params["optimizer"] = optax.scale(0)
 
 #optimizer for the full weights
+gradient_accumulation_steps = params.get("gradient_accumulation_steps", 1)
+weight_decay = params["weight_decay"]
+warmup_steps = params["warmup_steps"]
+anneal_steps = params["anneal_steps"]
+lr = params["lr"]
+end_lr = params["end_lr"]
+scheduler = util.gpt3_schedule(warmup_steps, anneal_steps, lr, end_lr)
 opt = optax.chain(
         optax.scale(1 / gradient_accumulation_steps),
         clip_by_global_norm(1),
