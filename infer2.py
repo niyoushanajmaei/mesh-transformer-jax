@@ -57,7 +57,7 @@ print(f"loading RAM usage: {re.getrusage(re.RUSAGE_SELF)}")
 # move the state to CPU/system memory so it's not duplicated by xmap
 network.state = jax.device_put(network.state, jax.devices("cpu")[0])
 
-def infer(context, top_k=40, top_p=0.9, temp=1.0, gen_len=512):
+def infer(context, top_k=40, top_p=0.9, temp=1.0, gen_len=210):
     tokens = tokenizer.encode(context)
 
     provided_ctx = len(tokens)
