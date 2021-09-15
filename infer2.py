@@ -12,7 +12,7 @@ import transformers
 import resource as re
 import time
 
-from mesh_transformer.checkpoint import read_ckpt
+from mesh_transformer.checkpoint import read_ckpt_lowmem
 from mesh_transformer.sampling import nucleaus_sample
 from mesh_transformer.transformer_shard import CausalTransformer
 #from mesh_transformer import util
@@ -77,7 +77,7 @@ start = time.time()
 init_ram = re.getrusage(re.RUSAGE_SELF).ru_maxrss
 
 # here we load a checkpoint which was written with 8 shards into 1 shard
-network.state = read_ckpt(network.state, "/home/zero11/slim/step_383500/", 8, shards_out=cores_per_replica)
+network.state = read_ckpt_lowmem(network.state, "/home/zero11/slim/step_383500/", 8, shards_out=cores_per_replica)
 
 # move the state to CPU/system memory so it's not duplicated by xmap
 network.state = jax.device_put(network.state, jax.devices("cpu")[0])
