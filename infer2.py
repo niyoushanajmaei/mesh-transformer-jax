@@ -49,22 +49,22 @@ params["sampler"] = nucleaus_sample
 # params["optimizer"] = optax.scale(0)
 
 #optimizer for the full weights
-gradient_accumulation_steps = params.get("gradient_accumulation_steps", 1)
-weight_decay = params["weight_decay"]
-warmup_steps = params["warmup_steps"]
-anneal_steps = params["anneal_steps"]
-lr = params["lr"]
-end_lr = params["end_lr"]
-scheduler = util.gpt3_schedule(warmup_steps, anneal_steps, lr, end_lr)
-opt = optax.chain(
-        optax.scale(1 / gradient_accumulation_steps),
-        clip_by_global_norm(1),
-        optax.scale_by_adam(),
-        additive_weight_decay(weight_decay),
-        optax.scale(-1),
-        optax.scale_by_schedule(scheduler)
-    )
-params["optimizer"] = opt
+#gradient_accumulation_steps = params.get("gradient_accumulation_steps", 1)
+#weight_decay = params["weight_decay"]
+#warmup_steps = params["warmup_steps"]
+#anneal_steps = params["anneal_steps"]
+#end_lr = params["end_lr"]
+#lr = params["lr"]
+#scheduler = util.gpt3_schedule(warmup_steps, anneal_steps, lr, end_lr)
+#opt = optax.chain(
+#        optax.scale(1 / gradient_accumulation_steps),
+#        clip_by_global_norm(1),
+#        optax.scale_by_adam(),
+#        additive_weight_decay(weight_decay),
+#        optax.scale(-1),
+#        optax.scale_by_schedule(scheduler)
+#    )
+#params["optimizer"] = opt
 
 devices = np.array([jax.devices()[0]]).reshape((1, 1))
 maps.thread_resources.env = maps.ResourceEnv(maps.Mesh(devices, ('dp', 'mp')))
@@ -76,7 +76,7 @@ network = CausalTransformer(params)
 start = time.time()
 
 # here we load a checkpoint which was written with 8 shards into 1 shard
-network.state = read_ckpt(network.state, "/home/zero11/step_383500/", 8, shards_out=cores_per_replica)
+network.state = read_ckpt(network.state, "/home/zero11/slim/step_383500/", 8, shards_out=cores_per_replica)
 
 print(f"loading RAM usage: {re.getrusage(re.RUSAGE_SELF)}")
 
