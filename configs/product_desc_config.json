@@ -30,7 +30,7 @@
   "eval_harness_tasks": [
   ],
 
-  "val_batches": 32,
+  "val_batches": 38,
   "val_every": 72,
   "ckpt_every": 72,
   "keep_every": 72,
