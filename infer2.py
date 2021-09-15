@@ -78,10 +78,11 @@ start = time.time()
 # here we load a checkpoint which was written with 8 shards into 1 shard
 network.state = read_ckpt(network.state, "/home/zero11/slim/step_383500/", 8, shards_out=cores_per_replica)
 
-print(f"loading RAM usage: {re.getrusage(re.RUSAGE_SELF)}")
-
 # move the state to CPU/system memory so it's not duplicated by xmap
 network.state = jax.device_put(network.state, jax.devices("cpu")[0])
+
+print(f"loading RAM usage: {re.getrusage(re.RUSAGE_SELF)}")
+print(f"loading done in {time.time() - start:06}s")
 
 def infer(context, top_k=40, top_p=0.9, temp=1.0, gen_len=210):
     tokens = tokenizer.encode(context)
