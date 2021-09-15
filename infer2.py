@@ -46,7 +46,7 @@ seq = params["seq"]
 params["sampler"] = nucleaus_sample
 
 # optimizer for the slim weights
-# params["optimizer"] = optax.scale(0)
+params["optimizer"] = optax.scale(0)
 
 #optimizer for the full weights
 #gradient_accumulation_steps = params.get("gradient_accumulation_steps", 1)
