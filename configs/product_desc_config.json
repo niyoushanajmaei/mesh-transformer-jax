@@ -21,7 +21,7 @@
 
   "tpu_size": 1,
 
-  "bucket": "/home/zero11/",
+  "bucket": "/home/zero11/slim/",
   "model_dir": "checkpoints",
 
   "train_set": "product_desc.train.index",
