@@ -36,9 +36,19 @@ seq = params["seq"]
 
 params["sampler"] = nucleaus_sample
 
-# here we "remove" the optimizer parameters from the model (as we don't need them for inference)
-# remove this line when using the full weights
-#params["optimizer"] = optax.scale(0)
+# optimizer for the slim weights
+# params["optimizer"] = optax.scale(0)
+
+#optimizer for the full weights
+opt = optax.chain(
+        optax.scale(1 / gradient_accumulation_steps),
+        clip_by_global_norm(1),
+        optax.scale_by_adam(),
+        additive_weight_decay(weight_decay),
+        optax.scale(-1),
+        optax.scale_by_schedule(scheduler)
+    )
+params["optimizer"] = opt
 
 devices = np.array([jax.devices()[0]]).reshape((1, 1))
 maps.thread_resources.env = maps.ResourceEnv(maps.Mesh(devices, ('dp', 'mp')))
