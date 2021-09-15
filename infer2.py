@@ -37,7 +37,8 @@ seq = params["seq"]
 params["sampler"] = nucleaus_sample
 
 # here we "remove" the optimizer parameters from the model (as we don't need them for inference)
-params["optimizer"] = optax.scale(0)
+# remove this line when using the full weights
+#params["optimizer"] = optax.scale(0)
 
 devices = np.array([jax.devices()[0]]).reshape((1, 1))
 maps.thread_resources.env = maps.ResourceEnv(maps.Mesh(devices, ('dp', 'mp')))
@@ -49,7 +50,7 @@ network = CausalTransformer(params)
 start = time.time()
 
 # here we load a checkpoint which was written with 8 shards into 1 shard
-network.state = read_ckpt(network.state, "/home/zero11/slim/step_383500/", 8, shards_out=cores_per_replica)
+network.state = read_ckpt(network.state, "/home/zero11/step_383500/", 8, shards_out=cores_per_replica)
 
 print(f"loading RAM usage: {re.getrusage(re.RUSAGE_SELF)}")
 
