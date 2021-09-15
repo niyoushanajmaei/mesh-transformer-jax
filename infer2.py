@@ -74,6 +74,7 @@ tokenizer = transformers.GPT2TokenizerFast.from_pretrained('gpt2')
 network = CausalTransformer(params)
 
 start = time.time()
+init_ram = re.getrusage(re.RUSAGE_SELF).ru_maxrss
 
 # here we load a checkpoint which was written with 8 shards into 1 shard
 network.state = read_ckpt(network.state, "/home/zero11/slim/step_383500/", 8, shards_out=cores_per_replica)
@@ -81,7 +82,6 @@ network.state = read_ckpt(network.state, "/home/zero11/slim/step_383500/", 8, sh
 # move the state to CPU/system memory so it's not duplicated by xmap
 network.state = jax.device_put(network.state, jax.devices("cpu")[0])
 
-print(f"loading RAM usage: {re.getrusage(re.RUSAGE_SELF)}")
 print(f"loading done in {time.time() - start:06}s")
 
 def infer(context, top_k=40, top_p=0.9, temp=1.0, gen_len=210):
@@ -103,7 +103,7 @@ def infer(context, top_k=40, top_p=0.9, temp=1.0, gen_len=210):
     for o in decoded_tokens[:, :, 0]:
       samples.append(tokenizer.decode(o))
 
-    print(f"total RAM usage: {re.getrusage(re.RUSAGE_SELF)}")
+    print(f"loading RAM usage: {(re.getrusage(re.RUSAGE_SELF).ru_maxrss - init_ram)/1048576.0} Gb")
     print(f"completion done in {time.time() - start:06}s")
     return samples
 
